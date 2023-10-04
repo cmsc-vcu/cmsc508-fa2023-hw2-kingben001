@@ -1,5 +1,5 @@
 # Welcome to Homework 2
-2023-08-27
+2023-09-01
 
 This is a scaffold project. I’ll be providing scaffolds throughout the
 semester to get you working faster, and to make grading much easier for
