@@ -20,21 +20,46 @@ they don’t have to.
 Identify and document the entities, attributes, and relationships using
 Chen notation.
 
-<div>
-
-<div>
-
-<img src="README_files/figure-commonmark/dot-figure-1.png"
-style="width:7in;height:5in" />
-
-</div>
-
-</div>
+```{dot}
+graph ER {
+   
+    layout=neato;
+  scale=1.3;
+    node [shape=box]; book, member;
+    node [shape=ellipse]; isbn, title, pub_year, member_id, name, contact_info  
+    node [shape=diamond,style=filled,color=lightgrey]; has
+    
+    
+    book -- has[label="1",len=1.00]
+    has -- member[label="n",len=1.00]
+    
+    book -- isbn
+    book -- title
+    book -- pub_year
+ 
+    member -- member_id
+    member -- contact_info
+    member -- name
+    
+}
+```
 
 ## Design Task 2
 
 Identify and document the entities, attributes, and relationships using
 Crow’s Foot notation.
 
-<img src="README_files/figure-commonmark/mermaid-figure-1.png"
-style="width:1.69in;height:3.33in" />
+```{mermaid}
+erDiagram
+    Member ||--o{ Book : can_checkout
+    Member {
+        string Name
+        string Member_ID
+        string Contact_Info
+    }
+    Book{
+        string ISBN
+        string Title
+        int pub_year
+    }
+```
